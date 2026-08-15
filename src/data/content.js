@@ -16,10 +16,10 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/muhammadmubashirt",
   bio: "Nexlifie is a technology solutions company delivering end-to-end IT services — combining Artificial Intelligence, Cybersecurity, and Digital Transformation. We build high-performance websites, custom software, SEO systems, automation workflows, and scalable digital infrastructure for startups, clinics, salons, and service brands.",
   // Local placeholder — drop your photo at this path (already present in the repo root).
-  photo: "/image.JPG",
+  photo: import.meta.env.BASE_URL + "image.JPG",
   // Pre-processed cutout (background removed via macOS Vision framework
   // subject segmentation) used in the hero.
-  photoCutout: "/profile-cutout.png",
+  photoCutout: import.meta.env.BASE_URL + "profile-cutout.png",
 };
 
 export const aboutPillars = [
