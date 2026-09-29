@@ -35,7 +35,7 @@ export default function Hero() {
   const photoScrollY = useTransform(scrollYProgress, [0, 1], [0, -90]);
 
   return (
-    <section id="hero" ref={sectionRef} className="relative bg-bg pb-28 pt-36 sm:pt-44">
+    <section id="hero" ref={sectionRef} className="relative pb-28 pt-36 sm:pt-44">
       {/* Faint vertical ruler lines — subtle technical/editorial texture */}
       <div
         className="pointer-events-none absolute inset-0"
