@@ -1,9 +1,7 @@
 import { useRef } from "react";
-import { ArrowUpRight, Globe, MapPin } from "lucide-react";
+import { ArrowUpRight, Globe } from "lucide-react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Reveal from "./Reveal";
-import LinkedInIcon from "./icons/LinkedInIcon";
-import InstagramIcon from "./icons/InstagramIcon";
 import { contact, profile, contactOptions } from "../data/content";
 import { useIsFinePointer, usePrefersReducedMotion } from "../hooks/useMediaQuery";
 
@@ -114,35 +112,13 @@ export default function Contact() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <div className="mt-10 flex items-center justify-center border-t border-white/10 pt-8">
             <div className="flex items-center gap-3">
               <img src={profile.photo} alt="" className="h-10 w-10 rounded-full object-cover object-top" />
               <div>
                 <p className="font-display text-sm font-bold text-ink">{profile.name}</p>
                 <p className="text-xs text-ink-muted">{profile.title}</p>
               </div>
-            </div>
-            <div className="flex items-center gap-5 text-sm text-ink-muted">
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin size={14} className="text-accent" />
-                {profile.location}
-              </span>
-              {[
-                { href: profile.linkedin, label: "LinkedIn", Icon: LinkedInIcon },
-                { href: profile.instagram, label: "Instagram", Icon: InstagramIcon },
-                { href: profile.website, label: "Nexlifie website", Icon: Globe },
-              ].map(({ href, label, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-ink transition-colors hover:border-accent hover:text-accent"
-                >
-                  <Icon size={15} />
-                </a>
-              ))}
             </div>
           </div>
         </Reveal>

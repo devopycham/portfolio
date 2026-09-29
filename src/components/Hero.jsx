@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { Globe, MapPin } from "lucide-react";
+import LinkedInIcon from "./icons/LinkedInIcon";
+import InstagramIcon from "./icons/InstagramIcon";
 import { aboutPillars, profile } from "../data/content";
 import { usePrefersReducedMotion } from "../hooks/useMediaQuery";
 import DecryptedText from "./DecryptedText";
@@ -132,7 +134,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.85, ease: EASE }}
           data-hero-location-tag
-          className="mt-[clamp(14rem,9rem+12vw,18rem)] flex justify-center"
+          className="mt-[clamp(14rem,9rem+12vw,18rem)] flex flex-wrap items-center justify-center gap-3"
         >
           <span className="card inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-semibold text-ink-muted">
             <MapPin size={13} className="text-accent-ink" />
@@ -149,6 +151,29 @@ export default function Hero() {
               />
             )}
           </span>
+          {[
+            { href: profile.linkedin, label: "LinkedIn", Icon: LinkedInIcon, background: "#0A66C2", color: "#fff" },
+            {
+              href: profile.instagram,
+              label: "Instagram",
+              Icon: InstagramIcon,
+              background: "linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%)",
+              color: "#fff",
+            },
+            { href: profile.website, label: "Nexlifie website", Icon: Globe, background: "var(--color-accent)", color: "var(--color-on-accent)" },
+          ].map(({ href, label, Icon, background, color }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              style={{ background, color }}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110"
+            >
+              <Icon size={15} />
+            </a>
+          ))}
         </motion.div>
 
         {/* Role + bio + CTA */}

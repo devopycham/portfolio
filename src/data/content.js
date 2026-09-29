@@ -32,22 +32,34 @@ export const aboutPillars = [
   { key: "automation", label: "Automation", blurb: "Manual busywork replaced with systems that run themselves." },
 ];
 
-// Shown in About only, so the hero's capability strip stays unchanged.
-export const marketingPillar = {
-  key: "marketing",
-  label: "Marketing",
-  blurb: "Brand, growth and audience strategy that gets great products noticed.",
-};
-
 // Facts derived from the experience timeline below — no invented metrics.
 export const stats = [
+  { value: 2, suffix: "", label: "Verticals: Development & Media" },
+  { value: 6, suffix: "", label: "Development services" },
+  { value: 7, suffix: "", label: "Marketing services" },
   { value: 4, suffix: "", label: "Roles across cloud & operations" },
-  { value: 6, suffix: "", label: "Core service lines" },
-  { value: 5, suffix: "", label: "Core pillars" },
-  { value: 2, suffix: "", label: "Brands: Nexlifie & Nexlifie Media" },
 ];
 
-export const audiences = ["Startups", "Clinics", "Salons", "Service brands"];
+// The two verticals of Nexlifie shown in About (offerings mirror nexlifie.com).
+export const verticals = [
+  {
+    name: "Nexlifie",
+    tag: "Development",
+    tagline: "Building ideas into reality with secured products.",
+    points: ["AI Solutions", "Custom Business Software", "Mobile Applications", "Web Applications", "Websites & Digital Products", "Game Applications"],
+    href: "https://nexlifie.com/development",
+    label: "nexlifie.com/development",
+  },
+  {
+    name: "Nexlifie Media",
+    tag: "Marketing",
+    tagline: "Performance-led marketing strategies that get brands seen and growing.",
+    points: ["Digital Marketing", "Branding", "SEO", "Social Media Management", "Video Production", "AI Videos", "Influencer Marketing"],
+    href: "https://nexlifie.com/media",
+    label: "nexlifie.com/media",
+  },
+];
+
 
 export const principles = [
   { title: "Build, don't just plan", body: "Ideas are easy. Shipping them is the work." },
